@@ -1,5 +1,5 @@
 import {type Request, type Response} from 'express'
-import { fakeMessages } from '../database/fakeDatabase';
+import { fakeMessages } from '../mocks/messageMocks';
 
 export class FindAllMessagesController {
 
