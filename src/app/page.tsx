@@ -1,5 +1,15 @@
+import { Button } from "./components/button";
+import { MessageContainer } from "./components/messageContainer";
 
 export default function Home() {
+
+  async function handleSubmit(formData: FormData){
+    'use server'
+
+    const name = formData.get('inputName');
+    console.log(name)
+  }
+
   return (
     <main>
       <section className="flex justify-center gap-5 mt-8">
@@ -7,7 +17,7 @@ export default function Home() {
          <h1 className="font-bold text-4xl">Get in touch</h1>
         <p>Send us a message and we will get back as soon as possible</p>
         <div className="bg-white w-lg mt-5 p-4 h-100 rounded-xl drop-shadow-md">
-          <form className="flex flex-col h-full gap-4" action="">
+          <form className="flex flex-col h-full gap-4" action={handleSubmit}>
             <div className="flex flex-col">
               <label className="font-bold" htmlFor="input-name">Full Name</label>
               <input 
@@ -35,15 +45,13 @@ export default function Home() {
               placeholder="Tell us what's on your mind..."
               ></textarea>
             </div>
+            <Button label="Send Message"></Button>
           </form>
         </div>
        </main>
         <aside className="flex flex-col w-lg h-full">
           <h1 className="font-bold text-xl">Recent Messages</h1>
-          <div className="flex flex-col items-center justify-center bg-white mt-5 rounded-xl h-40 drop-shadow-md">
-            <h2 className="font-bold">No messages yet</h2>
-            <p>Be the first to send us a message</p>
-          </div>
+          <MessageContainer/>
         </aside>
       </section>
       
