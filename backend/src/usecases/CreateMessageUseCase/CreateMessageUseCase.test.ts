@@ -1,5 +1,4 @@
 import { MessageRepository } from '../../repositories/port';
-import { MongodbHelper } from '../../repositories/helpers/MongodbHelper';
 import { CreateMessageUseCase } from './CreateMessageUseCase';
 import dotenv from 'dotenv'
 import { MessageProps } from '../../types/messageTypes';
@@ -11,28 +10,11 @@ import { InvalidEmailError } from '../errors/InvalidEmailError';
 dotenv.config()
 
 describe('Testing CreateMessageUseCase', () => {
-  const mongoHelper = MongodbHelper.getInstance()
   const messageMongodbRepository: MessageRepository = {
     findAll: jest.fn(async () => fakeDatabaseMessages),
     create: jest.fn(async (message: MessageProps) => fakeDatabaseMessages[0])
   }
   const createMessageUseCase = new CreateMessageUseCase(messageMongodbRepository);
-
-  beforeAll(async () => {
-    const uri = process.env.MONGO_URI;
-    if (!uri){
-      throw Error('Mongodb URI was not found')
-    }
-    await mongoHelper.connect(uri)
-  });
-
-  beforeEach(async () => {
-    await mongoHelper.clearCollection('messages');
-  })
-
-  afterAll(async () => {
-   await  mongoHelper.disconnect()
-  })
 
   test('Should create a new message', async () => {
     const message =  {
