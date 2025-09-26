@@ -18,7 +18,7 @@ export class CreateMessageUseCase implements CreateMessage {
 
     const {username, email} = message
 
-    const usernameIsValid = validateUsername(email)
+    const usernameIsValid = validateUsername(username)
     if(!usernameIsValid){
       throw new InvalidUsernameError(username)
     }
