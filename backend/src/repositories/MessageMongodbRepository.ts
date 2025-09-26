@@ -7,9 +7,22 @@ export class MessageMongoDbRepository {
 
   messsageCollection = mongoHelper.getCollection('messages')
 
-  async create(message: MessageProps) {
+  async create(message: MessageProps): Promise<MessageModel | null>{
     const result = await this.messsageCollection.insertOne({...message, createdAt: new Date()});
-    return result;
+
+    const createdMessage = await this.messsageCollection.findOne({_id: result.insertedId})
+    
+    if(createdMessage === null){
+      return null
+    }
+    
+    return {
+      _id: createdMessage._id,
+      username: createdMessage.username,
+      email: createdMessage.email,
+      text: createdMessage.text,
+      createdAt: createdMessage.createdAt
+    };
   }
 
   async findAll(): Promise<MessageModel[]> {

@@ -34,9 +34,7 @@ describe('Testing MongodbHelper', () => {
       createdAt: new Date().toString()
     }
 
-    const result = await messageRepository.create(message);
-
-    const createdMessage = await messagesCollection.findOne({_id: result.insertedId})
+    const createdMessage = await messageRepository.create(message);
     
     expect(createdMessage?.username).toBe(message.username);
     expect(createdMessage?.email).toBe(message.email);
