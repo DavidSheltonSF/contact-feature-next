@@ -1,5 +1,5 @@
 import { MongodbHelper } from "./helpers/MongodbHelper"
-import { MessageProps, MessageModel } from "../types/message";
+import { MessageProps, MessageModel } from "../types/messageTypes";
 
 const mongoHelper = MongodbHelper.getInstance()
 
