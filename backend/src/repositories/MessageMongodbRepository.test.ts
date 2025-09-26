@@ -1,4 +1,4 @@
-import { MessageMongoDbRepository } from './MessageMongodbRepository';
+import { MessageMongodbRepository } from './MessageMongodbRepository';
 import { MongodbHelper } from './helpers/MongodbHelper';
 import dotenv from 'dotenv'
 dotenv.config()
@@ -25,7 +25,7 @@ describe('Testing MongodbHelper', () => {
   test('Should create a new message', async () => {
     const mongoHelper = MongodbHelper.getInstance()
     const messagesCollection = mongoHelper.getCollection('messages');
-    const messageRepository = new MessageMongoDbRepository()
+    const messageRepository = new MessageMongodbRepository()
 
     const message = {
       username: 'Jeraldo',

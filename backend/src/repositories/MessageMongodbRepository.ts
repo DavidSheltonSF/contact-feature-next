@@ -3,7 +3,7 @@ import { MessageProps, MessageModel } from "../types/messageTypes";
 
 const mongoHelper = MongodbHelper.getInstance()
 
-export class MessageMongoDbRepository {
+export class MessageMongodbRepository {
 
   messsageCollection = mongoHelper.getCollection('messages')
 
