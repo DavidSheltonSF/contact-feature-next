@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "ts-node backend/src/server.ts"
+    "server": "tsx watch backend/src/server.ts"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
@@ -15,7 +15,8 @@
     "express": "^5.1.0",
     "next": "15.5.4",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "tsx": "^4.20.6"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -26,7 +27,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "tailwindcss": "^4",
-    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
