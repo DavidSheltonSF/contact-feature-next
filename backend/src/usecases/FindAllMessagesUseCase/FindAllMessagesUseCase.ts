@@ -1,8 +1,9 @@
-import { MessageRepository } from "../repositories/port";
-import { MessageOutputDTO } from "../types/messageTypes";
-import { serializeMessage } from "./helpers/serializeMessage";
+import { MessageRepository } from "../../repositories/port";
+import { MessageOutputDTO } from "../../types/messageTypes";
+import { serializeMessage } from "../helpers/serializeMessage";
+import { FindAllMessages } from "./interface";
 
-export class FindAllMessagesUseCase {
+export class FindAllMessagesUseCase implements FindAllMessages{
   private readonly messageRepo: MessageRepository;
 
   constructor(messageRepo: MessageRepository){

@@ -1,9 +1,9 @@
-import { MessageRepository } from '../repositories/port';
-import { MongodbHelper } from '../repositories/helpers/MongodbHelper';
+import { MessageRepository } from '../../repositories/port';
+import { MongodbHelper } from '../../repositories/helpers/MongodbHelper';
 import { FindAllMessagesUseCase } from './FindAllMessagesUseCase';
 import dotenv from 'dotenv'
-import { MessageProps } from '../types/messageTypes';
-import { fakeDatabaseMessages } from '../mocks/messageMocks';
+import { MessageProps } from '../../types/messageTypes';
+import { fakeDatabaseMessages } from '../../mocks/messageMocks';
 
 dotenv.config()
 
