@@ -7,7 +7,7 @@ import { fakeDatabaseMessages } from '../../mocks/messageMocks';
 
 dotenv.config()
 
-describe('Testing MongodbHelper', () => {
+describe('Testing FindAllMessagesUseCase', () => {
   const mongoHelper = MongodbHelper.getInstance()
   const messageMongodbRepository: MessageRepository = {
     findAll: jest.fn(async () => fakeDatabaseMessages),
