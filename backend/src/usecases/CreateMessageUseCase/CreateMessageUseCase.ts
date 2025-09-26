@@ -1,0 +1,41 @@
+import { MessageRepository } from "../../repositories/port";
+import { MessageOutputDTO, MessageProps } from "../../types/messageTypes";
+import { InvalidEmailError } from "../errors/InvalidEmailError";
+import { InvalidUsernameError } from "../errors/InvalidUsernameError";
+import { serializeMessage } from "../helpers/serializeMessage";
+import { validateEmail } from "../helpers/validateEmail";
+import { validateUsername } from "../helpers/validateUsername";
+import { CreateMessage } from "./interface";
+
+export class CreateMessageUseCase implements CreateMessage {
+  private readonly messageRepo: MessageRepository;
+
+  constructor(messageRepo: MessageRepository){
+    this.messageRepo = messageRepo
+  }
+
+  async execute(message: MessageProps): Promise<MessageOutputDTO>{
+
+    const {username, email} = message
+
+    const usernameIsValid = validateUsername(email)
+    if(!usernameIsValid){
+      throw new InvalidUsernameError(username)
+    }
+
+    const emailIsValid = validateEmail(email)
+    if(!emailIsValid){
+      throw new InvalidEmailError(email)
+    }
+
+    const result = await this.messageRepo.create(message);
+
+    if(!result) {
+      throw Error('Something went wrong! Message wa not created!')
+    }
+
+    const serializedMessage = serializeMessage(result)
+
+    return serializedMessage
+  }
+}
