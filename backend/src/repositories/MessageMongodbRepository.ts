@@ -1,9 +1,10 @@
 import { MongodbHelper } from "./helpers/MongodbHelper"
 import { MessageProps, MessageModel } from "../types/messageTypes";
+import { MessageRepository } from "./port";
 
 const mongoHelper = MongodbHelper.getInstance()
 
-export class MessageMongodbRepository {
+export class MessageMongodbRepository implements MessageRepository{
 
   messsageCollection = mongoHelper.getCollection('messages')
 
