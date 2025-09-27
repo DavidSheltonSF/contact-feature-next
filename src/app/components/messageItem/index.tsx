@@ -16,7 +16,9 @@ export function MessageItem(props: MessageProps) {
     <article className="flex flex-col gap-4 h-30">
     <header className="flex gap-3">
       <div className="flex">
-        <span className="bg-blue-500 px-3 py-4 rounded-xl">Icon</span>
+        <span className="bg-blue-400 px-3 py-3 rounded-xl">
+          <img src="user-icon.svg" alt="" />
+        </span>
       </div>
       <div className="flex flex-col justify-center mr-auto">
         <h3 className="font-bold">{username}</h3>
