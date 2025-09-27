@@ -30,6 +30,7 @@ export function Messages({messages}: MessagePropsArray) {
               username={msg.username}
               email={msg.email}
               text={msg.text}
+              createdAt={msg.createdAt}
             />
           })
         }
