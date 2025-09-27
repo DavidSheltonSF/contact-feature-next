@@ -13,7 +13,7 @@ export function MessageItem(props: MessageProps) {
   const {username, email, text, createdAt} = props
  
   return (
-    <article className="flex flex-col gap-4 h-30">
+    <article className="flex flex-col gap-4 h-30 transform opacity-0 transition-all translate-y-4 ease-in-out delay-200 duration-200 animate-fade-in">
     <header className="flex gap-3">
       <div className="flex">
         <span className="bg-blue-400 px-3 py-3 rounded-xl">
