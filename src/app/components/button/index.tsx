@@ -5,7 +5,10 @@ interface ButtonProps {
 export function Button({label}: ButtonProps) {
   return (
     <button className="bg-blue-500 text-white font-bold rounded-md py-1 cursor-pointer hover:bg-sky-500 transition delay-5 ease-linear" type="submit">
-      {label}
+      <span className="flex justify-center gap-2">
+        <img className="w-4" src="send-icon.svg" alt="" />
+        {label}
+      </span>
     </button>
   )
 }
