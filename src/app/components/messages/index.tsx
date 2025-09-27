@@ -1,4 +1,4 @@
-import { MessageItem } from "../messageItem";
+import { MessageItem, MessageProps } from "../messageItem";
 
 const fakeMessages = [
   {
@@ -15,15 +15,21 @@ const fakeMessages = [
   },
 ]
 
-export function Messages() {
+interface MessagePropsArray {
+  messages: MessageProps[]
+}
+
+export async function Messages({messages}: MessagePropsArray) {
+
   return (
     <div className="flex flex-col justify-center w-full px-5 flex-1 mt-5 gap-2">
         {
-          fakeMessages.map(msg => {
+          messages.map(msg => {
             return <MessageItem
-              username={msg.name}
+              key={msg.id}
+              username={msg.username}
               email={msg.email}
-              body={msg.body}
+              text={msg.text}
             />
           })
         }
