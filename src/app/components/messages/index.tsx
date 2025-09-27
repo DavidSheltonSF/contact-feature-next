@@ -19,7 +19,7 @@ interface MessagePropsArray {
   messages: MessageProps[]
 }
 
-export async function Messages({messages}: MessagePropsArray) {
+export function Messages({messages}: MessagePropsArray) {
 
   return (
     <div className="flex flex-col justify-center w-full px-5 flex-1 mt-5 gap-2">
