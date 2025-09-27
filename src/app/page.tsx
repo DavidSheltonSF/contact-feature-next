@@ -1,5 +1,5 @@
 'use client'
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import { MessageContainer } from "./components/messageContainer";
 import { Form } from "./components/form";
 import {submitMessage} from "./actions/submitMessage"
