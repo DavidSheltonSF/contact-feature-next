@@ -11,7 +11,7 @@ export function Form({formAction}: Props) {
       <div className="flex flex-col">
         <label className="font-bold" htmlFor="input-name">Full Name</label>
         <input 
-        className="border-1 border-solid border-gray-200 rounded-sm py-1" 
+        className="border-1 border-solid border-gray-200 rounded-sm py-1 pl-3" 
         type="text" id="input-name" 
         name="username"
         placeholder="Enter your full name"
@@ -20,7 +20,7 @@ export function Form({formAction}: Props) {
       <div className="flex flex-col">
         <label className="font-bold" htmlFor="input-email">Email Address</label>
         <input 
-        className="border-1 border-solid border-gray-200 rounded-sm py-1" 
+        className="border-1 border-solid border-gray-200 rounded-sm py-1 pl-3" 
         type="text"
         name="email"
         id="input-email" 
@@ -30,7 +30,7 @@ export function Form({formAction}: Props) {
       <div className="flex flex-col flex-1">
         <label className="font-bold" htmlFor="input-message">Message</label>
         <textarea 
-        className="border-1 border-solid border-gray-200 rounded-sm flex-1" 
+        className="border-1 border-solid border-gray-200 rounded-sm flex-1 pl-3" 
         name="textMessage" 
         id="input-message" 
         placeholder="Tell us what's on your mind..."
