@@ -20,9 +20,13 @@ export async function submitMessage(prevState: any, formData: FormData){
     const data = await response.json()
     console.log(data)
 
-    return {username, email, textMessage}
+    if(data.statusCode > 300){
+      return {success: false, message: data.body}
+    }
+
+    return {success: true, data: {username, email, textMessage}}
   } catch (error) {
     console.log(error)
-    return  ''
+    return  {success: false, message: 'Something went wrong!'}
   }
   }

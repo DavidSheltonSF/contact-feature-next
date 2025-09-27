@@ -1,11 +1,13 @@
 import { Button } from "../button";
+import { SubmitionFeedbackMessage } from "../submitionFeedbackMessage/intex";
 
 
 type Props = {
   formAction: (formData: FormData) => void;
+  formState: any
 };
 
-export function Form({formAction}: Props) {
+export function Form({formAction, formState}: Props) {
   return (
     <form className="flex flex-col h-full gap-4" action={formAction}>
       <div className="flex flex-col">
@@ -36,6 +38,8 @@ export function Form({formAction}: Props) {
         placeholder="Tell us what's on your mind..."
         ></textarea>
       </div>
+      {formState?.success === false ? <SubmitionFeedbackMessage type="error" label={formState?.message}/> : ''}
+      {formState?.success === true ? <SubmitionFeedbackMessage type="success" /> : ''}
       <Button label="Send Message"></Button>
     </form>
   )
