@@ -20,11 +20,11 @@ interface MessagePropsArray {
 }
 
 export function Messages({messages}: MessagePropsArray) {
-
+  const recentMessages = messages.slice(0, 4)
   return (
     <div className="flex flex-col justify-center w-full px-5 flex-1 mt-5 gap-2">
         {
-          messages.map(msg => {
+          recentMessages.map(msg => {
             return <MessageItem
               key={msg.id}
               username={msg.username}
