@@ -1,13 +1,14 @@
-interface MessageProps {
+export interface MessageProps {
+  id?: string;
   username: string;
   email: string;
-  body: string;
+  text: string;
   // createdAt: string
 }
 
 export function MessageItem(props: MessageProps) {
 
-  const {username, email, body} = props
+  const {username, email, text} = props
  
   return (
     <article className="flex flex-col gap-4 h-30">
@@ -28,7 +29,7 @@ export function MessageItem(props: MessageProps) {
       </div>
     </header>
     <main>
-      <p>{body}</p>
+      <p>{text}</p>
     </main>
   </article>
   )
