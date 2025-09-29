@@ -1,4 +1,4 @@
-export function validateUsername(username: string) {
+export function validateFullName(username: string) {
 
   const usernameReguex = /^[a-zA-Z0-9]+$/;
 

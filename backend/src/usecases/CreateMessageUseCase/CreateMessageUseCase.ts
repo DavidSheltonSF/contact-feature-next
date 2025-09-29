@@ -4,7 +4,7 @@ import { InvalidEmailError } from "../errors/InvalidEmailError";
 import { InvalidUsernameError } from "../errors/InvalidUsernameError";
 import { serializeMessage } from "../helpers/serializeMessage";
 import { validateEmail } from "../helpers/validateEmail";
-import { validateUsername } from "../helpers/validateUsername";
+import { validateFullName } from "../helpers/validateFullName";
 import { CreateMessage } from "./interface";
 
 export class CreateMessageUseCase implements CreateMessage {
@@ -18,7 +18,7 @@ export class CreateMessageUseCase implements CreateMessage {
 
     const {username, email} = message
 
-    const usernameIsValid = validateUsername(username)
+    const usernameIsValid = validateFullName(username)
     if(!usernameIsValid){
       throw new InvalidUsernameError(username)
     }
