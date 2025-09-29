@@ -6,7 +6,7 @@ import { NavBar } from "./components/navbar";
 export const metadata: Metadata = {
   title: "Contact us",
   description: "If you are facing any issues, please, contact us, and we will reply soon",
-  icons: "websiteIcon.png"
+  icons: "website-icon-smaller.svg"
 };
 
 export default function RootLayout({
