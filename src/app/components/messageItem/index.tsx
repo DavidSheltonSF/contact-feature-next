@@ -2,7 +2,7 @@ import { setTimeFeedback } from "@/app/utils/setTimeFeedback";
 
 export interface MessageProps {
   id?: string;
-  username: string;
+  fullName: string;
   email: string;
   text: string;
   createdAt: string
@@ -10,7 +10,7 @@ export interface MessageProps {
 
 export function MessageItem(props: MessageProps) {
 
-  const {username, email, text, createdAt} = props
+  const {fullName, email, text, createdAt} = props
  
   return (
     <article className="flex flex-col gap-4 h-30 transform opacity-0 transition-all translate-y-4 ease-in-out delay-200 duration-200 animate-fade-in">
@@ -21,7 +21,7 @@ export function MessageItem(props: MessageProps) {
         </span>
       </div>
       <div className="flex flex-col justify-center mr-auto">
-        <h3 className="font-bold">{username}</h3>
+        <h3 className="font-bold">{fullName}</h3>
         <div className="flex items center gap-1">
           <img className="opacity-50 w-4" src="email-icon.svg" alt="" /> <span className="text-gray-500 text-sm">{email}</span>
         </div>

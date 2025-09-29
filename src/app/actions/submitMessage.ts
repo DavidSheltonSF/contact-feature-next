@@ -2,7 +2,7 @@
 
 export async function submitMessage(prevState: any, formData: FormData){
   try {
-    const username = formData.get('username');
+    const fullName = formData.get('fullName');
     const email = formData.get('email');
     const textMessage = formData.get('textMessage');
 
@@ -12,7 +12,7 @@ export async function submitMessage(prevState: any, formData: FormData){
         'Content-Type': 'application/json', // dizendo que o corpo é JSON
       },
       body: JSON.stringify({
-        username,
+        fullName,
         email,
         text: textMessage
       })
@@ -24,7 +24,7 @@ export async function submitMessage(prevState: any, formData: FormData){
       return {success: false, message: data.body}
     }
 
-    return {success: true, data: {username, email, textMessage}}
+    return {success: true, data: {fullName, email, textMessage}}
   } catch (error) {
     console.log(error)
     return  {success: false, message: 'Something went wrong!'}

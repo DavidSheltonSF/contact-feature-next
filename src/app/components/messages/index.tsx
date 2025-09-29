@@ -27,7 +27,7 @@ export function Messages({messages}: MessagePropsArray) {
           recentMessages.map(msg => {
             return <MessageItem
               key={msg.id}
-              username={msg.username}
+              fullName={msg.fullName}
               email={msg.email}
               text={msg.text}
               createdAt={msg.createdAt}

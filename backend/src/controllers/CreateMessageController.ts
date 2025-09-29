@@ -1,4 +1,4 @@
-import { InvalidUsernameError } from '../usecases/errors/InvalidFullName';
+import { InvalidFullNameError } from '../usecases/errors/InvalidFullName';
 import { InvalidEmailError } from '../usecases/errors/InvalidEmailError';
 import { CreateMessage } from '../usecases/CreateMessageUseCase/interface';
 import { HttpRequest, HttpResponse } from './httpPort';
@@ -21,10 +21,10 @@ export class CreateMessageController {
         return badRequest('Request body is missing')
       }
 
-      const {username, email, text} = body;
+      const {fullName, email, text} = body;
 
-      if (!username){
-        return badRequest('Username is missing')
+      if (!fullName){
+        return badRequest('Full name is missing')
       }
 
       if (!email){
@@ -42,7 +42,7 @@ export class CreateMessageController {
     } catch (error) {
       console.log(error);
 
-      if(error instanceof InvalidUsernameError) {
+      if(error instanceof InvalidFullNameError) {
         return badRequest(error.message)
       }
 
