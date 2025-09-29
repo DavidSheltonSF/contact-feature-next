@@ -1,4 +1,4 @@
-import { InvalidUsernameError } from '../usecases/errors/InvalidUsernameError';
+import { InvalidUsernameError } from '../usecases/errors/InvalidFullName';
 import { InvalidEmailError } from '../usecases/errors/InvalidEmailError';
 import { CreateMessage } from '../usecases/CreateMessageUseCase/interface';
 import { HttpRequest, HttpResponse } from './httpPort';
