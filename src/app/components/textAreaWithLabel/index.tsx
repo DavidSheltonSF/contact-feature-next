@@ -16,6 +16,7 @@ export function TextAreaWithLabel(props: TextAreaProps) {
         name={name}
         id={id} 
         placeholder={placeholder}
+        required
         ></textarea>
     </div>
   )
