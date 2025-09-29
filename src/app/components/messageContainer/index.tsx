@@ -35,7 +35,7 @@ export function MessageContainer({formState}: {formState: any}) {
   )}
 
   return (
-  <div className="flex flex-col items-center justify-center bg-white mt-5 rounded-xl min-h-40 drop-shadow-md">
+  <div className="flex flex-col items-center justify-start bg-white mt-5 rounded-xl min-h-40 drop-shadow-md overflow-y-scroll h-100">
     {
       messages.length ? <Messages messages={messages}/> : <NoMessage/>
     }
