@@ -1,7 +1,7 @@
 import { MessageRepository } from "../../repositories/port";
 import { MessageOutputDTO, MessageProps } from "../../types/messageTypes";
 import { InvalidEmailError } from "../errors/InvalidEmailError";
-import { InvalidUsernameError } from "../errors/InvalidUsernameError";
+import { InvalidFullNameError } from "../errors/InvalidFullName";
 import { serializeMessage } from "../helpers/serializeMessage";
 import { validateEmail } from "../helpers/validateEmail";
 import { validateFullName } from "../helpers/validateFullName";
@@ -16,11 +16,11 @@ export class CreateMessageUseCase implements CreateMessage {
 
   async execute(message: MessageProps): Promise<MessageOutputDTO>{
 
-    const {username, email} = message
+    const {fullName, email} = message
 
-    const usernameIsValid = validateFullName(username)
-    if(!usernameIsValid){
-      throw new InvalidUsernameError(username)
+    const fullNameIsValid = validateFullName(fullName)
+    if(!fullNameIsValid){
+      throw new InvalidFullNameError(fullName)
     }
 
     const emailIsValid = validateEmail(email)

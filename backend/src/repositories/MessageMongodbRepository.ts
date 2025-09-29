@@ -19,7 +19,7 @@ export class MessageMongodbRepository implements MessageRepository{
     
     return {
       _id: createdMessage._id,
-      username: createdMessage.username,
+      fullName: createdMessage.fullName,
       email: createdMessage.email,
       text: createdMessage.text,
       createdAt: createdMessage.createdAt
@@ -32,7 +32,7 @@ export class MessageMongodbRepository implements MessageRepository{
     const mappedResults = result.map(msg => {
       return {
         _id: msg._id,
-        username: msg.username,
+        fullName: msg.fullName,
         email: msg.email,
         text: msg.text,
         createdAt: msg.createdAt

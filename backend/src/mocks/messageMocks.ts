@@ -3,13 +3,13 @@ import { MessageModel } from "../types/messageTypes"
 
 export const fakeMessages = [
   {
-    username: 'Joseth',
+    fullName: 'Joseth',
     email: "jo@email.com",
     text: "This is a test message",
     createdAt: "2020-01-22"
   },
   {
-    username: 'Mario',
+    fullName: 'Mario',
     email: "jo@email.com",
     text: "This is a test message",
     createdAt: "2025-02-02"
@@ -19,14 +19,14 @@ export const fakeMessages = [
 export const fakeDatabaseMessages: MessageModel[] = [
   { 
     _id: new ObjectId(),
-    username: 'Joseth',
+    fullName: 'Joseth',
     email: "jo@email.com",
     text: "This is a test message",
     createdAt: new Date()
   },
   {
     _id: new ObjectId(),
-    username: 'Mario',
+    fullName: 'Mario',
     email: "jo@email.com",
     text: "This is a test message",
     createdAt: new Date()

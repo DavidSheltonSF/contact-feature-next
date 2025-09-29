@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import { MessageProps } from '../../types/messageTypes';
 import { fakeDatabaseMessages } from '../../mocks/messageMocks';
 import { ObjectId } from 'mongodb';
-import { InvalidUsernameError } from '../errors/InvalidUsernameError';
+import { InvalidFullNameError } from '../errors/InvalidFullName';
 import { InvalidEmailError } from '../errors/InvalidEmailError';
 
 dotenv.config()
@@ -18,7 +18,7 @@ describe('Testing CreateMessageUseCase', () => {
 
   test('Should create a new message', async () => {
     const message =  {
-    username: 'Joseth',
+    fullName: 'Joseth Zenodo Tesvo',
     email: "jo@email.com",
     text: "This is a test message",
     createdAt: "2020-01-22"
@@ -33,24 +33,25 @@ describe('Testing CreateMessageUseCase', () => {
     jest.spyOn(messageMongodbRepository, 'create').mockResolvedValue(messageFromDatabase)
 
     const result = await createMessageUseCase.execute(message)
+    console.log(result)
     expect(result).toBeTruthy()
-    expect(result.username).toBe(message.username)
+    expect(result.fullName).toBe(message.fullName)
   });
 
-  test('Should throw error if username is invalid', async () => {
+  test('Should throw error if fullName is invalid', async () => {
     const message =  {
-    username: 'Joseth#',
+    fullName: 'Joseth#',
     email: "jo@email.com",
     text: "This is a test message",
     createdAt: "2020-01-22"
     }
 
-    expect(createMessageUseCase.execute(message)).rejects.toThrow(InvalidUsernameError)
+    expect(createMessageUseCase.execute(message)).rejects.toThrow(InvalidFullNameError)
   });
 
   test('Should throw error if email is invalid', async () => {
     const message =  {
-    username: 'Joseth',
+    fullName: 'Joseth Zora Vargo',
     email: "joemail.com",
     text: "This is a test message",
     createdAt: "2020-01-22"
@@ -58,6 +59,5 @@ describe('Testing CreateMessageUseCase', () => {
 
     expect(createMessageUseCase.execute(message)).rejects.toThrow(InvalidEmailError)
   });
-
 
 })

@@ -28,7 +28,7 @@ describe('Testing MongodbHelper', () => {
     const messageRepository = new MessageMongodbRepository()
 
     const message = {
-      username: 'Jeraldo',
+      fullName: 'Jeraldo Marcio de Miranda',
       email: 'jera@email.com',
       text: "This is a simple message",
       createdAt: new Date().toString()
@@ -36,7 +36,7 @@ describe('Testing MongodbHelper', () => {
 
     const createdMessage = await messageRepository.create(message);
     
-    expect(createdMessage?.username).toBe(message.username);
+    expect(createdMessage?.fullName).toBe(message.fullName);
     expect(createdMessage?.email).toBe(message.email);
     expect(createdMessage?.text).toBe(message.text);
   });

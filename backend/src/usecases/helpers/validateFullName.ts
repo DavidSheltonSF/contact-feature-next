@@ -1,8 +1,8 @@
-export function validateFullName(username: string) {
+export function validateFullName(fullName: string) {
 
-  const usernameReguex = /^[a-zA-Z0-9]+$/;
+  const fullNameReguex = /^[A-Za-z]+(?:\s[A-Za-z]+)+$/;
 
-  if(username.length > 30 || !username.match(usernameReguex)) {
+  if(fullName.length > 30 || !fullName.toLocaleLowerCase().match(fullNameReguex)) {
     return false
   }
 

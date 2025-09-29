@@ -1,14 +1,14 @@
 import { ObjectId } from "mongodb";
 
 export interface MessageProps {
-  username: string,
+  fullName: string,
   email: string,
   text: string,
 }
 
 export interface MessageModel {
   _id: ObjectId,
-   username: string,
+  fullName: string,
   email: string,
   text: string,
   createdAt: Date
@@ -16,7 +16,7 @@ export interface MessageModel {
 
 export interface MessageOutputDTO {
   id: string,
-  username: string,
+  fullName: string,
   email: string,
   text: string,
   createdAt: string
