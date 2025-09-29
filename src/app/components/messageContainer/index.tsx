@@ -28,11 +28,11 @@ export function MessageContainer({formState}: {formState: any}) {
     fetchMessages();
   }, [formState])
 
-  {if (loading) return (
+  if (loading) return (
     <div className="flex flex-col items-center justify-center bg-white mt-5 rounded-xl min-h-40 drop-shadow-md">
       <img className="w-15 animate-spin" src="loading-icon.svg" alt="" />
     </div>
-  )}
+  )
 
   return (
   <div className="flex flex-col items-center justify-start bg-white mt-5 rounded-xl min-h-40 drop-shadow-md overflow-y-scroll h-100">
