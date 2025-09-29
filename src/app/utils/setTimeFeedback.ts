@@ -18,7 +18,7 @@ export function setTimeFeedback(date: string | Date) {
   }
 
   if(hours >= 1) {
-    return `${Math.round(minutes/60)} hour(s) ago`
+    return `${Math.round(hours)} hour(s) ago`
   }
 
   if(hours >= 24) {
