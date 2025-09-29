@@ -12,7 +12,7 @@ export const created = (data: any): HttpResponse => ({
 
 
 export const badRequest = (data: any): HttpResponse => ({
-  statusCode: 500,
+  statusCode: 400,
   body: data
 });
 
