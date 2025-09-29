@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "server": "tsx watch backend/src/server.ts"
+    "server": "tsx watch backend/src/server.ts",
+    "clearDatabase": "tsx backend/src/devTools/clearDatabase.ts"
   },
   "dependencies": {
     "cookie-parser": "^1.4.7",
