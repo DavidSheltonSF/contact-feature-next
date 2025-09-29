@@ -12,8 +12,8 @@ type Props = {
 export function Form({formAction, formState}: Props) {
   return (
     <form className="flex flex-col h-full gap-4" action={formAction}>
-      <InputWithLabel id="input-name" label="Full Name" placeholder="Enter your full name" name="username"/>
-      <InputWithLabel id="input-email" label="Email Address" placeholder="Enter your email address" name="email"/>
+      <InputWithLabel id="input-name" label="Full Name" placeholder="Enter your full name" name="username" type="text"/>
+      <InputWithLabel id="input-email" label="Email Address" placeholder="Enter your email address" name="email" type="email"/>
       <TextAreaWithLabel id="input-message" label="Message" placeholder="Tell us what's on your mind..." name="textMessage"/>
       {formState?.success === false ? <SubmitionFeedbackMessage type="error" label={formState?.message}/> : ''}
       {formState?.success === true ? <SubmitionFeedbackMessage type="success" /> : ''}

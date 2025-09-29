@@ -12,7 +12,7 @@ export function TextAreaWithLabel(props: TextAreaProps) {
      <div className="flex flex-col flex-1">
         <label className="font-bold" htmlFor="input-message">{label}</label>
         <textarea 
-        className="border-1 border-solid border-gray-200 rounded-sm flex-1 pl-3" 
+        className="outline-none border-1 border-solid border-gray-200 rounded-sm flex-1 pl-3 focus:border-sky-500 transition duration-300" 
         name={name}
         id={id} 
         placeholder={placeholder}
