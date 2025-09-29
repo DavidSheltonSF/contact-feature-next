@@ -1,8 +1,11 @@
 export function setTimeFeedback(date: string | Date) {
-  const dateObj = new Date(date);
+  const dateTime = new Date(date).getTime();
+  const now = new Date().getTime();
 
-  const minutes = dateObj.getMinutes();
-  const hours = dateObj.getHours();
+  const miliseconds = now - dateTime
+  const seconds = miliseconds / 1000;
+  const minutes = seconds / 60
+  const hours = minutes / 60
 
   console.log(minutes)
 
@@ -11,14 +14,14 @@ export function setTimeFeedback(date: string | Date) {
   }
   
   if(minutes >= 1) {
-    return `${minutes} minute(s) ago`
+    return `${Math.round(minutes)} minute(s) ago`
   }
 
   if(hours >= 1) {
-    return `${minutes/60} hour(s) ago`
+    return `${Math.round(minutes/60)} hour(s) ago`
   }
 
   if(hours >= 24) {
-    return `${hours/24} day(s) ago`
+    return `${Math.round(hours/24)} day(s) ago`
   }
 }
