@@ -9,7 +9,7 @@ export default function Home() {
   const [formState, formAction] = useActionState(submitMessage, null)
   return (
     <main>
-      <section className="flex justify-center gap-5 mt-8 max-lg:flex-col max-lg:items-center m-auto bg-green-200 max-lg:w-150">
+      <section className="flex justify-center gap-5 mt-8 max-lg:flex-col max-lg:items-center m-auto max-lg:w-150">
        <main>
          <div className="flex flex-col w-128 max-lg:items-center
          ">
