@@ -22,7 +22,7 @@ interface MessagePropsArray {
 export function Messages({messages}: MessagePropsArray) {
   const recentMessages = messages.slice(0, 4)
   return (
-    <div className="flex flex-col justify-center w-full px-5 flex-1 mt-5 gap-2">
+    <div className="flex flex-col w-full px-5 flex-1 mt-5 gap-2">
         {
           recentMessages.map(msg => {
             return <MessageItem
