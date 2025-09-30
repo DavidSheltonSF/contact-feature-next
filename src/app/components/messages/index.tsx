@@ -25,7 +25,7 @@ export function Messages({messages}: MessagePropsArray) {
   return (
     <div className="flex flex-col w-full flex-1 gap-5">
         {
-          recentMessages.map(msg => {
+          fakeMessages.map(msg => {
             return <MessageItem
               key={msg.id}
               fullName={msg.fullName}
