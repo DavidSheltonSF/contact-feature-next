@@ -14,11 +14,10 @@ dotenv.config()
 
 const app = express()
 const port = 8080
-
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin: 'http://localhost:3001'
+  origin: ['http://localhost:3001', 'http://192.168.0.119:3001']
 }))
 
 await (async () => {
