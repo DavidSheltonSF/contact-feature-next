@@ -2,15 +2,16 @@ import { MessageItem, MessageProps } from "../messageItem";
 
 const fakeMessages = [
   {
-    name: 'Joseth',
+    id:'fsafdsfa',
+    fullName: 'Josetho',
     email: "jo@email.com",
-    body: "This is a test message",
+    text: "This is a test message",
     createdAt: "2025-02-02"
   },
-  {
-    name: 'Joseth',
+  { id: 'ffsdfasdgasga',
+    fullName: 'Joseth',
     email: "jo@email.com",
-    body: "This is a test message",
+    text: "This is a test message",
     createdAt: "2025-02-02"
   },
 ]
@@ -24,7 +25,7 @@ export function Messages({messages}: MessagePropsArray) {
   return (
     <div className="flex flex-col w-full flex-1 gap-5">
         {
-          recentMessages.map(msg => {
+          fakeMessages.map(msg => {
             return <MessageItem
               key={msg.id}
               fullName={msg.fullName}
